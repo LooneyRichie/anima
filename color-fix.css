@@ -1,0 +1,77 @@
+/* COMPREHENSIVE COLOR REMOVAL FIX */
+
+/* Remove ALL colored backgrounds - make everything clean and simple */
+* {
+  background: transparent !important;
+}
+
+/* Keep essential backgrounds */
+body, .anima-app {
+  background: #ffffff !important;
+}
+
+/* Buttons get consistent styling */
+button, 
+.activation-btn,
+[class*="-btn"] {
+  background: linear-gradient(45deg, #4CAF50, #45a049) !important;
+  color: white !important;
+  border: 1px solid #45a049 !important;
+  text-shadow: 0 1px 4px #000 !important;
+}
+
+.activation-btn.active {
+  background: linear-gradient(45deg, #FF5722, #E64A19) !important;
+}
+
+/* Category filters */
+.category-filter {
+  background: #1a1a1a !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+  text-shadow: 0 1px 4px #000 !important;
+}
+
+.category-filter.active {
+  background: #4CAF50 !important;
+  color: white !important;
+  border: 1px solid #45a049 !important;
+}
+
+/* Category count pills */
+.category-count {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #1a237e !important;
+}
+
+/* Reference category tags */
+.reference-category {
+  background: #333 !important;
+  color: white !important;
+  border: 1px solid #666 !important;
+}
+
+/* All containers get simple borders */
+.microexpression-detector,
+.biometric-monitor,
+.environmental-context,
+.emotion-translator,
+.communication-interface,
+.pet-registration,
+.scientific-references,
+.research-methodology,
+.ethical-considerations,
+.future-research,
+.methodology-item,
+.research-area,
+.training-section,
+.references-controls,
+.reference-item {
+  background: transparent !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Headers keep white background */
+.app-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+}

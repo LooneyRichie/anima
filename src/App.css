@@ -155,7 +155,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   height: 200px;
-  background: #f5f5f5;
+  background: transparent;
 }
 
 .video-feed {
@@ -2001,12 +2001,12 @@ body {
 
 /* Scientific References Styles */
 .scientific-references {
-  background: linear-gradient(135deg, rgba(63, 81, 181, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
-  border: 2px solid #3F51B5;
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 20px;
   padding: 2rem;
   margin-top: 3rem;
-  box-shadow: 0 15px 50px rgba(63, 81, 181, 0.2);
+  box-shadow: none;
 }
 
 .references-header {
@@ -2015,10 +2015,8 @@ body {
 }
 
 .references-header h2 {
-  background: linear-gradient(45deg, #3F51B5, #9C27B0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #111 !important;
+  background: none !important;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -2034,11 +2032,11 @@ body {
 }
 
 .references-controls {
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
   border-radius: 15px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border: 1px solid rgba(63, 81, 181, 0.2);
+  border: 1px solid #ccc;
 }
 
 .reference-search {
@@ -2068,9 +2066,9 @@ body {
 }
 
 .category-filter {
-  background: linear-gradient(45deg, #e8eaf6, #f3e5f5);
-  border: 2px solid rgba(63, 81, 181, 0.4);
-  color: #1a237e;
+  background: #1a1a1a !important;
+  border: 2px solid #333 !important;
+  color: #fff !important;
   padding: 0.7rem 1.2rem;
   border-radius: 20px;
   cursor: pointer;
@@ -2080,21 +2078,23 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-shadow: 0 1px 4px #000 !important;
 }
 
 .category-filter:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(63, 81, 181, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: #333 !important;
 }
 
 .category-filter.active {
-  background: linear-gradient(45deg, #3F51B5, #9C27B0);
-  color: white;
-  border-color: #3F51B5;
+  background: #4CAF50 !important;
+  color: #fff !important;
+  border-color: #45a049 !important;
 }
 
 .category-count {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   padding: 0.2rem 0.5rem;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -2103,7 +2103,7 @@ body {
 }
 
 .reference-item {
-  background: rgba(255, 255, 255, 0.98);
+  background: transparent;
   border: 2px solid rgba(63, 81, 181, 0.3);
   border-radius: 15px;
   padding: 1.5rem;
@@ -2117,12 +2117,53 @@ body {
   transform: translateY(-2px);
 }
 
+
 .reference-title {
   color: #1a237e;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .scientific-references .references-header h2,
+  .scientific-references .reference-title {
+    color: #fff !important;
+    background: none !important;
+    text-shadow: 0 1px 4px #000 !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+  
+  /* Fix category filters on mobile */
+  .category-filter {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border: 2px solid #333 !important;
+    text-shadow: 0 1px 4px #000 !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+  
+  .category-filter.active {
+    background: #4CAF50 !important;
+    color: #fff !important;
+    border-color: #45a049 !important;
+  }
+  
+  /* Fix category count inside filters */
+  .category-count {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #1a237e !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: #1a237e !important;
+  }
+  
+  .reference-category {
+    color: #fff !important;
+    border: 2px solid #222 !important;
+    text-shadow: 0 1px 4px #000 !important;
+    background: #333 !important;
+  }
 }
 
 .reference-category {
@@ -2135,37 +2176,21 @@ body {
   letter-spacing: 0.5px;
 }
 
-.reference-category.vocalization {
-  background: linear-gradient(45deg, #FF5722, #FF7043);
-}
-
-.reference-category.microexpression {
-  background: linear-gradient(45deg, #E91E63, #F06292);
-}
-
-.reference-category.biometric {
-  background: linear-gradient(45deg, #2196F3, #42A5F5);
-}
-
-.reference-category.environmental {
-  background: linear-gradient(45deg, #4CAF50, #66BB6A);
-}
-
-.reference-category.interspecies {
-  background: linear-gradient(45deg, #9C27B0, #BA68C8);
-}
-
-.reference-category.technology {
-  background: linear-gradient(45deg, #FF9800, #FFB74D);
-}
-
+.reference-category.vocalization,
+.reference-category.microexpression,
+.reference-category.biometric,
+.reference-category.environmental,
+.reference-category.interspecies,
+.reference-category.technology,
 .reference-category.validation {
-  background: linear-gradient(45deg, #607D8B, #90A4AE);
+  background: #333 !important;
+  color: white !important;
+  border: 1px solid #666 !important;
 }
 
 .reference-abstract {
-  background: rgba(63, 81, 181, 0.15);
-  border-left: 4px solid #3F51B5;
+  background: transparent;
+  border-left: 3px solid #ccc;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -2175,8 +2200,8 @@ body {
 }
 
 .reference-findings {
-  background: rgba(76, 175, 80, 0.15);
-  border-left: 4px solid #4CAF50;
+  background: transparent;
+  border-left: 3px solid #ccc;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -2185,28 +2210,35 @@ body {
   font-weight: 500;
 }
 
-.export-references-btn {
-  background: linear-gradient(45deg, #4CAF50, #8BC34A);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* Override index.css button styles completely */
+button.export-references-btn,
+.export-section button.export-references-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049) !important;
+  color: white !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  border-radius: 50px !important;
+  cursor: pointer !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 1px 4px #000 !important;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3) !important;
 }
 
-.export-references-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+.export-references-btn:hover,
+button.export-references-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4) !important;
+  border-color: transparent !important;
+  background: linear-gradient(45deg, #4CAF50, #45a049) !important;
 }
 
 .research-methodology {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(33, 150, 243, 0.4);
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 15px;
   padding: 2rem;
   margin-top: 2rem;
@@ -2226,8 +2258,8 @@ body {
 }
 
 .methodology-item {
-  background: rgba(33, 150, 243, 0.15);
-  border: 1px solid rgba(33, 150, 243, 0.4);
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem;
   transition: transform 0.3s ease;
@@ -2241,8 +2273,8 @@ body {
 }
 
 .ethical-considerations {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(76, 175, 80, 0.4);
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 15px;
   padding: 2rem;
   margin-top: 2rem;
@@ -2263,8 +2295,8 @@ body {
 .ethics-content li {
   padding: 0.8rem;
   margin-bottom: 0.5rem;
-  border-left: 4px solid #4CAF50;
-  background: rgba(76, 175, 80, 0.15);
+  border-left: 4px solid #ccc;
+  background: transparent;
   border-radius: 8px;
   line-height: 1.5;
   color: #1a1a1a;
@@ -2272,8 +2304,8 @@ body {
 }
 
 .future-research {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(156, 39, 176, 0.4);
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 15px;
   padding: 2rem;
   margin-top: 2rem;
@@ -2293,8 +2325,8 @@ body {
 }
 
 .research-area {
-  background: rgba(156, 39, 176, 0.15);
-  border: 1px solid rgba(156, 39, 176, 0.4);
+  background: transparent;
+  border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -2350,9 +2382,13 @@ body {
 .submit-btn,
 .cancel-btn,
 .export-btn,
-.toggle-advanced,
-.export-references-btn {
+.toggle-advanced {
+  background: #1a237e !important;
+  color: #fff !important;
   font-weight: 600 !important;
+  border-radius: 20px;
+  text-shadow: 0 1px 4px #000 !important;
+}
 }
 
 /* Ensure all headings are dark enough */
@@ -2393,24 +2429,43 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* AGGRESSIVE TEXT READABILITY FIX - Override ALL light text */
-* {
-  color: #000000 !important;
+/* Text Readability Improvements - Proper contrast without breaking pills/buttons */
+
+/* Remove all problematic button overrides - let individual definitions work */
+
+/* Ensure activation button is always visible */
+.activation-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049) !important;
+  color: white !important;
+  text-shadow: 0 1px 4px #000 !important;
 }
 
-/* Keep specific colored elements that should stay colored */
-.reference-category,
-.category-filter.active,
-.feedback-btn,
-.submit-btn,
-.cancel-btn,
-.export-btn,
-.toggle-advanced,
-.export-references-btn {
+.activation-btn.active {
+  background: linear-gradient(45deg, #FF5722, #E64A19) !important;
   color: white !important;
 }
 
-/* Main headings can keep their gradient but make sure they are visible */
+/* Category filters with consistent dark backgrounds */
+.category-filter {
+  background: #1a237e !important;
+  border-color: #3F51B5 !important;
+}
+
+.category-filter.active {
+  background: #3F51B5 !important;
+  color: white !important;
+  border-color: #9C27B0 !important;
+}
+
+/* Main content text should be dark for readability */
+.main-content p,
+.main-content span,
+.main-content div:not(.category-filter):not(.reference-category):not(.activation-btn):not([class*="-btn"]),
+.main-content li {
+  color: #1a1a1a !important;
+}
+
+/* Main headings remain visible */
 h1, h2.app-title, .references-header h2 {
   color: #1a1a1a !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
@@ -2418,13 +2473,8 @@ h1, h2.app-title, .references-header h2 {
 
 /* Section headings should be dark */
 h3, h4, h5, h6 {
-  color: #000000 !important;
+  color: #1a1a1a !important;
   font-weight: bold !important;
-}
-
-/* All paragraph text should be black */
-p, span, div, li {
-  color: #000000 !important;
 }
 
 /* Links should be dark blue and visible */
@@ -2590,12 +2640,6 @@ button {
   background: #000000 !important;
   color: #ffffff !important;
   border: 1px solid #000000 !important;
-}
-
-.reference-category, .category-filter.active {
-  background: #000000 !important;
-  color: #ffffff !important;
-}
 }
 
 /* Pet Registration Styles */
@@ -2995,3 +3039,39 @@ button {
   }
 }
 
+/* NUCLEAR OVERRIDE FOR EXPORT BUTTON */
+#root button[class*="export"],
+#root .export-references-btn,
+#root button.export-references-btn,
+div button.export-references-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049) !important;
+  color: white !important;
+  border: 2px solid #4CAF50 !important;
+}
+
+/* ABSOLUTE FINAL OVERRIDE - REMOVE ALL GRAY/WHITE BACKGROUNDS */
+.reference-item,
+.reference-abstract,
+.reference-findings,
+.reference-header,
+.reference-meta,
+.reference-publication,
+.reference-doi,
+.reference-citation,
+.abstract-section,
+.findings-section,
+.scientific-references .reference-item,
+div[class*="reference"],
+*[class*="reference"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Force all reference content to have proper text color */
+.reference-item *,
+.reference-abstract *,
+.reference-findings *,
+.scientific-references * {
+  color: #000000 !important;
+}
